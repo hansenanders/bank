@@ -13,7 +13,8 @@ args = parser.parse_args()
 
 
 db = sqlite3.connect(args.sqlite_db_file)
-data = json.load(args.data_file)
+with open(args.data_file) as f:
+    data = json.load(f)
 
 cur = db.cursor()
 for d in data:
