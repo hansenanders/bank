@@ -23,7 +23,7 @@ def wash(name, date, value):
 
     date = date
     name = re.sub(r'Kort.+p\s[0-9]+\s', '', name)
-    value = re.sub(r',\d\d', '', value)
+    value = float(value.replace('.', '').replace(',', '.'))
 
     try:
         value = int(value)
